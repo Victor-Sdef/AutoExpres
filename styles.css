@@ -1337,6 +1337,20 @@ body {
 }
 
 @media (max-width: 768px) {
+  /* Deshabilitar transiciones lentas en móvil para carga inmediata */
+  * {
+    transition: none !important;
+    animation-duration: 0.1s !important;
+  }
+  
+  /* Mostrar elementos animados inmediatamente */
+  .fade-in,
+  .fade-in-left,
+  .fade-in-right {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
   .menu-toggle {
     display: flex;
   }
