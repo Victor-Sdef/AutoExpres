@@ -257,15 +257,16 @@ body {
 
 /* ==================== HERO SECTION ==================== */
 .hero {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 40px;
+  display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   padding: 60px 40px;
   min-height: calc(100vh - 70px);
   background: linear-gradient(135deg, rgba(0, 82, 204, 0.03) 0%, rgba(255, 107, 53, 0.03) 100%);
   position: relative;
   overflow: hidden;
+  gap: 40px;
 }
 
 .hero::before {
@@ -283,7 +284,8 @@ body {
   position: relative;
   z-index: 1;
   padding-left: 20px;
-  max-width: 600px;
+  max-width: 550px;
+  flex: 1;
 }
 
 .hero-badge {
@@ -372,6 +374,8 @@ body {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  flex: 1;
+  max-width: 55%;
 }
 
 .hero-image img {
@@ -380,7 +384,7 @@ body {
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-xl);
   object-fit: cover;
-  max-height: 450px;
+  max-height: 500px;
   object-position: center;
   transition: var(--transition);
 }
@@ -1294,7 +1298,7 @@ body {
   }
 
   .hero {
-    grid-template-columns: 1fr;
+    flex-direction: column;
     padding: 60px 20px;
     min-height: auto;
     text-align: center;
@@ -1302,6 +1306,12 @@ body {
 
   .hero-content {
     padding-left: 0;
+    max-width: 100%;
+  }
+
+  .hero-image {
+    max-width: 100%;
+    order: -1;
   }
 
   .hero-content h1 {
@@ -1315,10 +1325,6 @@ body {
 
   .hero-buttons {
     justify-content: center;
-  }
-
-  .hero-image {
-    order: -1;
   }
 
   .section-header {
