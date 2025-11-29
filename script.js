@@ -9,7 +9,38 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initScrollTopButton();
     initActiveNavLinks();
+    checkFormSuccess();
 });
+
+// ==================== VERIFICAR EXITO DEL FORMULARIO ====================
+function checkFormSuccess() {
+    // Verificar si viene de un envío exitoso
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('enviado') === 'true') {
+        showSuccessModal();
+        // Limpiar URL
+        window.history.replaceState({}, document.title, window.location.pathname + '#contacto');
+    }
+}
+
+function showSuccessModal() {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.add('show');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeSuccessModal() {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.remove('show');
+        document.body.style.overflow = '';
+    }
+}
+
+// Hacer la función global para el onclick
+window.closeSuccessModal = closeSuccessModal;
 
 // ==================== MENU MOVIL ====================
 function initMobileMenu() {
