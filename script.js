@@ -9,38 +9,78 @@ document.addEventListener('DOMContentLoaded', function() {
     initScrollAnimations();
     initScrollTopButton();
     initActiveNavLinks();
-    checkFormSuccess();
+    initContactForm();
 });
 
-// ==================== VERIFICAR EXITO DEL FORMULARIO ====================
-function checkFormSuccess() {
-    // Verificar si viene de un envío exitoso
-    const urlParams = new URLSearchParams(window.location.search);
-    if (urlParams.get('enviado') === 'true') {
-        showSuccessModal();
-        // Limpiar URL
-        window.history.replaceState({}, document.title, window.location.pathname + '#contacto');
-    }
+// ==================== FORMULARIO DE CONTACTO ====================
+function initContactForm() {
+    const form = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    if (!form) return;
+    
+    form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        // Deshabilitar botón y mostrar loading
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="btn-text">Enviando...</span>';
+        
+        // Preparar datos
+        const formData = new FormData(form);
+        const data = Object.fromEntries(formData);
+        
+        try {
+            const response = await fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+            
+            const result = await response.json();
+            
+            if (result.success) {
+                // Mostrar mensaje de éxito
+                formMessage.style.display = 'flex';
+                formMessage.className = 'form-message success';
+                formMessage.innerHTML = `
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    <div>
+                        <strong>¡Mensaje enviado exitosamente!</strong>
+                        <p>Gracias por contactarnos. Te responderemos a la brevedad.</p>
+                    </div>
+                `;
+                
+                // Limpiar formulario
+                form.reset();
+                
+                // Scroll al mensaje
+                formMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            } else {
+                throw new Error('Error al enviar');
+            }
+        } catch (error) {
+            // Mostrar mensaje de error
+            formMessage.style.display = 'flex';
+            formMessage.className = 'form-message error';
+            formMessage.innerHTML = `
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+                <div>
+                    <strong>Error al enviar</strong>
+                    <p>Hubo un problema. Intenta de nuevo o contáctanos por WhatsApp.</p>
+                </div>
+            `;
+        } finally {
+            // Restaurar botón
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<span class="btn-text">Enviar Mensaje</span>';
+        }
+    });
 }
-
-function showSuccessModal() {
-    const modal = document.getElementById('successModal');
-    if (modal) {
-        modal.classList.add('show');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeSuccessModal() {
-    const modal = document.getElementById('successModal');
-    if (modal) {
-        modal.classList.remove('show');
-        document.body.style.overflow = '';
-    }
-}
-
-// Hacer la función global para el onclick
-window.closeSuccessModal = closeSuccessModal;
 
 // ==================== MENU MOVIL ====================
 function initMobileMenu() {
