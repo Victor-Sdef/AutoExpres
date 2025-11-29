@@ -145,6 +145,15 @@ function initScrollAnimations() {
     
     if (animatedElements.length === 0) return;
 
+    // En móviles, mostrar todo inmediatamente sin animaciones
+    if (window.innerWidth <= 768) {
+        animatedElements.forEach(function(el) {
+            el.classList.add('visible');
+        });
+        return; // No usar observer en móviles
+    }
+
+    // Solo usar animaciones en desktop
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
