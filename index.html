@@ -3,27 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AUTOEXPRESS PRO - Taller especializado en diagnóstico computarizado y reparación de vehículos modernos en La Troncal, Ecuador. Tecnología de punta y personal certificado.">
+    <meta name="keywords" content="taller automotriz, diagnóstico computarizado, reparación electrónica, La Troncal, Ecuador, mantenimiento preventivo, escaneo automotriz">
+    <meta name="author" content="AUTOEXPRESS PRO">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://victor-sdef.github.io/AutoExpres/">
+    <meta property="og:title" content="AUTOEXPRESS PRO - Servicio inteligente para autos inteligentes">
+    <meta property="og:description" content="Taller especializado en diagnóstico y reparación de vehículos modernos con tecnología de punta en La Troncal, Ecuador.">
+    <meta property="og:image" content="https://inforafaela.com.ar/download/multimedia.normal.97e48a93ba90249c.504147494e41203137204152524942415f6e6f726d616c2e6a7067.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AUTOEXPRESS PRO - Servicio inteligente para autos inteligentes">
+    <meta name="twitter:description" content="Taller especializado en diagnóstico y reparación de vehículos modernos con tecnología de punta.">
+    
     <title>AUTOEXPRESS PRO - Servicio inteligente para autos inteligentes</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- HEADER Y NAVEGACIÓN -->
-    <header class="header">
+    <header class="header" role="banner">
         <div class="container">
             <div class="header-content">
-                <div class="logo">
-                    <div class="logo-icon">AE</div>
+                <a href="#home" class="logo" aria-label="AUTOEXPRESS PRO - Ir al inicio">
+                    <div class="logo-icon" aria-hidden="true">AE</div>
                     <div class="logo-text">
-                        <h1>AUTOEXPRESS PRO</h1>
-                        <p>Servicio inteligente para autos inteligentes</p>
+                        <span class="logo-title">AUTOEXPRESS PRO</span>
+                        <span class="logo-slogan">Servicio inteligente para autos inteligentes</span>
                     </div>
-                </div>
-                <button class="menu-toggle" id="menuToggle">
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
-                <nav class="nav" id="nav">
+                <nav class="nav" id="nav" role="navigation" aria-label="Navegación principal">
                     <a href="#home" class="nav-link">Inicio</a>
                     <a href="#nosotros" class="nav-link">Nosotros</a>
                     <a href="#servicios" class="nav-link">Servicios</a>
@@ -35,224 +58,360 @@
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h2>Tecnología Avanzada para tu Vehículo</h2>
-            <p>En AUTOEXPRESS PRO nos especializamos en el diagnóstico y reparación de autos modernos con la más avanzada tecnología</p>
-            <button class="cta-btn" onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'})">Conoce nuestros servicios</button>
+    <section class="hero" id="home" aria-labelledby="hero-title">
+        <div class="hero-overlay"></div>
+        <div class="hero-content fade-in">
+            <span class="hero-badge">🔧 Taller Especializado en La Troncal</span>
+            <h1 id="hero-title">Tecnología Avanzada para tu Vehículo</h1>
+            <p class="hero-description">En <strong>AUTOEXPRESS PRO</strong> nos especializamos en el diagnóstico y reparación de autos modernos con sistemas electrónicos avanzados. Somos la respuesta a la falta de talleres especializados en tu ciudad.</p>
+            <div class="hero-buttons">
+                <button class="cta-btn primary" onclick="document.getElementById('servicios').scrollIntoView({behavior: 'smooth'})">
+                    <span>Conoce nuestros servicios</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+                <a href="#contacto" class="cta-btn secondary">Contáctanos</a>
+            </div>
         </div>
-        <div class="hero-image">
-            <img src="/placeholder.svg?height=400&width=600" alt="Taller automotriz moderno">
+        <div class="hero-image fade-in-right">
+            <img src="https://inforafaela.com.ar/download/multimedia.normal.97e48a93ba90249c.504147494e41203137204152524942415f6e6f726d616c2e6a7067.jpg" alt="Taller automotriz moderno AUTOEXPRESS PRO con equipos de diagnóstico de última generación" loading="eager">
         </div>
     </section>
 
     <!-- SECCIÓN NOSOTROS -->
-    <section class="nosotros" id="nosotros">
+    <section class="nosotros" id="nosotros" aria-labelledby="nosotros-title">
         <div class="container">
-            <h2>Quiénes Somos</h2>
+            <div class="section-header fade-in">
+                <span class="section-badge">Conócenos</span>
+                <h2 id="nosotros-title">Quiénes Somos</h2>
+                <p class="section-subtitle">La historia detrás de nuestra pasión por la tecnología automotriz</p>
+            </div>
             <div class="nosotros-content">
-                <div class="nosotros-text">
+                <article class="nosotros-text fade-in-left">
                     <h3>AUTOEXPRESS PRO: Líderes en Tecnología Automotriz</h3>
-                    <p>Nacimos con la visión de resolver un problema crítico en La Troncal: la falta de talleres especializados en autos modernos. Durante años, los propietarios de vehículos de última generación enfrentaban grandes dificultades para encontrar servicios técnicos que comprendieran la complejidad de la tecnología automotriz contemporánea.</p>
                     
-                    <h4>Nuestra Misión</h4>
-                    <p>Brindar servicios técnicos de excelencia, utilizando tecnología de punta y personal altamente capacitado, garantizando que cada vehículo reciba el cuidado que merece.</p>
+                    <div class="problema-card">
+                        <div class="problema-icon" aria-hidden="true">⚠️</div>
+                        <div class="problema-content">
+                            <h4>El Problema que Resolvemos</h4>
+                            <p>En <strong>La Troncal</strong> no existían talleres especializados para autos modernos con sistemas electrónicos avanzados. Los propietarios de vehículos de última generación enfrentaban grandes dificultades para encontrar servicios técnicos que comprendieran la complejidad de la tecnología automotriz contemporánea.</p>
+                        </div>
+                    </div>
                     
-                    <h4>Nuestros Valores</h4>
-                    <ul class="valores-list">
-                        <li><strong>Confianza:</strong> Transparencia en cada servicio</li>
-                        <li><strong>Tecnología:</strong> Equipos de diagnóstico avanzados</li>
-                        <li><strong>Eficiencia:</strong> Soluciones rápidas y precisas</li>
-                        <li><strong>Profesionalismo:</strong> Equipo técnico certificado</li>
+                    <div class="mision-box">
+                        <h4><span aria-hidden="true">🎯</span> Nuestra Misión</h4>
+                        <p>Brindar servicios técnicos de excelencia para vehículos modernos mediante <strong>tecnología de punta</strong> y <strong>personal altamente capacitado</strong>, garantizando que cada vehículo reciba el cuidado especializado que merece.</p>
+                    </div>
+                    
+                    <h4><span aria-hidden="true">💎</span> Nuestros Valores</h4>
+                    <ul class="valores-list" role="list">
+                        <li><strong>Confianza:</strong> Transparencia total en cada diagnóstico y servicio</li>
+                        <li><strong>Tecnología:</strong> Equipos de diagnóstico de última generación</li>
+                        <li><strong>Eficiencia:</strong> Soluciones rápidas, precisas y duraderas</li>
+                        <li><strong>Profesionalismo:</strong> Equipo técnico certificado y en constante capacitación</li>
                     </ul>
-                </div>
-                <div class="nosotros-image">
-                    <img src="/placeholder.svg?height=400&width=500" alt="Equipo de AUTOEXPRESS PRO">
-                </div>
+                </article>
+                <figure class="nosotros-image fade-in-right">
+                    <img src="https://mundorecambio.info/wp-content/uploads/2025/10/Rodi1-1.jpg" alt="Equipo profesional de técnicos certificados de AUTOEXPRESS PRO trabajando en diagnóstico de vehículos" loading="lazy">
+                    <figcaption class="image-caption">Nuestro equipo de especialistas certificados</figcaption>
+                </figure>
             </div>
         </div>
     </section>
 
     <!-- SECCIÓN SERVICIOS -->
-    <section class="servicios" id="servicios">
+    <section class="servicios" id="servicios" aria-labelledby="servicios-title">
         <div class="container">
-            <h2>Nuestros Servicios</h2>
-            <p class="section-subtitle">Soluciones técnicas completas para autos modernos</p>
+            <div class="section-header fade-in">
+                <span class="section-badge">Lo que hacemos</span>
+                <h2 id="servicios-title">Nuestros Servicios</h2>
+                <p class="section-subtitle">Soluciones técnicas completas para vehículos con tecnología avanzada</p>
+            </div>
             
             <div class="servicios-grid">
-                <div class="servicio-card">
-                    <div class="servicio-icon">📊</div>
+                <article class="servicio-card fade-in" tabindex="0">
+                    <div class="servicio-icon-wrapper">
+                        <span class="servicio-icon" aria-hidden="true">📊</span>
+                    </div>
                     <h3>Diagnóstico Computarizado</h3>
-                    <p>Análisis completo del sistema electrónico de tu vehículo con equipos de última generación</p>
-                </div>
+                    <p>Análisis profundo del sistema electrónico de tu vehículo con equipos de última generación para detectar fallas con precisión absoluta.</p>
+                    <span class="servicio-tag">Más solicitado</span>
+                </article>
 
-                <div class="servicio-card">
-                    <div class="servicio-icon">🔧</div>
+                <article class="servicio-card fade-in" tabindex="0">
+                    <div class="servicio-icon-wrapper">
+                        <span class="servicio-icon" aria-hidden="true">🔧</span>
+                    </div>
                     <h3>Mantenimiento Preventivo</h3>
-                    <p>Servicios de mantenimiento programado para prolongar la vida útil de tu auto</p>
-                </div>
+                    <p>Servicios programados para prolongar la vida útil de tu auto y prevenir costosas reparaciones futuras.</p>
+                </article>
 
-                <div class="servicio-card">
-                    <div class="servicio-icon">⚡</div>
+                <article class="servicio-card fade-in" tabindex="0">
+                    <div class="servicio-icon-wrapper">
+                        <span class="servicio-icon" aria-hidden="true">⚡</span>
+                    </div>
                     <h3>Reparaciones Electrónicas</h3>
-                    <p>Reparación de sistemas eléctricos, sensores y módulos de control del vehículo</p>
-                </div>
+                    <p>Reparación especializada de sistemas eléctricos, sensores, módulos de control y componentes electrónicos avanzados.</p>
+                </article>
 
-                <div class="servicio-card">
-                    <div class="servicio-icon">🖥️</div>
+                <article class="servicio-card fade-in" tabindex="0">
+                    <div class="servicio-icon-wrapper">
+                        <span class="servicio-icon" aria-hidden="true">🖥️</span>
+                    </div>
                     <h3>Escaneo Automotriz</h3>
-                    <p>Escaneo avanzado para identificar fallas en los sistemas del automóvil</p>
-                </div>
+                    <p>Escaneo avanzado con herramientas profesionales para identificar códigos de error y fallas ocultas en los sistemas del vehículo.</p>
+                </article>
 
-                <div class="servicio-card">
-                    <div class="servicio-icon">🔍</div>
+                <article class="servicio-card fade-in" tabindex="0">
+                    <div class="servicio-icon-wrapper">
+                        <span class="servicio-icon" aria-hidden="true">🔍</span>
+                    </div>
                     <h3>Inspección Técnica</h3>
-                    <p>Revisión completa de seguridad y funcionamiento de tu vehículo</p>
-                </div>
+                    <p>Revisión completa de seguridad, funcionamiento mecánico y sistemas electrónicos de tu vehículo con informe detallado.</p>
+                </article>
 
-                <div class="servicio-card">
-                    <div class="servicio-icon">📱</div>
+                <article class="servicio-card fade-in" tabindex="0">
+                    <div class="servicio-icon-wrapper">
+                        <span class="servicio-icon" aria-hidden="true">📱</span>
+                    </div>
                     <h3>Actualización de Software</h3>
-                    <p>Actualización y reprogramación de sistemas inteligentes automotrices</p>
-                </div>
+                    <p>Actualización y reprogramación de sistemas inteligentes, ECU y módulos para optimizar el rendimiento de tu auto.</p>
+                    <span class="servicio-tag new">Nuevo</span>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- SECCIÓN BENEFICIOS -->
-    <section class="beneficios" id="beneficios">
+    <section class="beneficios" id="beneficios" aria-labelledby="beneficios-title">
         <div class="container">
-            <h2>¿Por Qué Elegirnos?</h2>
-            <p class="section-subtitle">Beneficios de confiar en AUTOEXPRESS PRO</p>
+            <div class="section-header fade-in">
+                <span class="section-badge">Ventajas</span>
+                <h2 id="beneficios-title">¿Por Qué Elegirnos?</h2>
+                <p class="section-subtitle">Descubre los beneficios de confiar tu vehículo a AUTOEXPRESS PRO</p>
+            </div>
             
             <div class="beneficios-grid">
-                <div class="beneficio-card">
+                <article class="beneficio-card fade-in" tabindex="0">
+                    <div class="beneficio-icon" aria-hidden="true">🚀</div>
                     <h3>Tecnología Moderna</h3>
-                    <p>Equipos de diagnóstico de última generación para detectar problemas con precisión absoluta</p>
-                </div>
+                    <p>Equipos de diagnóstico de última generación importados para detectar problemas con <strong>precisión absoluta</strong> en vehículos modernos.</p>
+                </article>
 
-                <div class="beneficio-card">
+                <article class="beneficio-card fade-in" tabindex="0">
+                    <div class="beneficio-icon" aria-hidden="true">👨‍🔧</div>
                     <h3>Equipo Certificado</h3>
-                    <p>Técnicos altamente capacitados y certificados en reparación de autos modernos</p>
-                </div>
+                    <p>Técnicos altamente capacitados y certificados en reparación de sistemas electrónicos y <strong>autos de última generación</strong>.</p>
+                </article>
 
-                <div class="beneficio-card">
+                <article class="beneficio-card fade-in" tabindex="0">
+                    <div class="beneficio-icon" aria-hidden="true">✅</div>
                     <h3>Garantía de Calidad</h3>
-                    <p>Garantizamos calidad en cada servicio con atención al detalle en todo momento</p>
-                </div>
+                    <p>Cada servicio cuenta con <strong>garantía</strong>. Nos comprometemos con la excelencia y la atención al detalle en todo momento.</p>
+                </article>
 
-                <div class="beneficio-card">
+                <article class="beneficio-card fade-in" tabindex="0">
+                    <div class="beneficio-icon" aria-hidden="true">🤝</div>
                     <h3>Atención Profesional</h3>
-                    <p>Servicio cordial y profesional que entiende las necesidades de tu vehículo</p>
-                </div>
+                    <p>Servicio cordial, transparente y profesional. <strong>Te explicamos cada diagnóstico</strong> para que tomes decisiones informadas.</p>
+                </article>
 
-                <div class="beneficio-card">
-                    <h3>Cumplimiento del Mercado</h3>
-                    <p>Respuesta a la creciente demanda de servicios especializados para vehículos inteligentes</p>
-                </div>
+                <article class="beneficio-card fade-in" tabindex="0">
+                    <div class="beneficio-icon" aria-hidden="true">📈</div>
+                    <h3>Respuesta al Mercado</h3>
+                    <p>Somos la <strong>solución a la falta de talleres especializados</strong> en La Troncal para vehículos con tecnología avanzada.</p>
+                </article>
 
-                <div class="beneficio-card">
+                <article class="beneficio-card fade-in" tabindex="0">
+                    <div class="beneficio-icon" aria-hidden="true">🕐</div>
                     <h3>Disponibilidad</h3>
-                    <p>Horarios amplios para tu comodidad y servicio accesible en La Troncal</p>
-                </div>
+                    <p>Horarios amplios y flexibles para tu comodidad. <strong>Agenda tu cita</strong> fácilmente por WhatsApp o formulario web.</p>
+                </article>
             </div>
         </div>
     </section>
 
     <!-- SECCIÓN CONTACTO -->
-    <section class="contacto" id="contacto">
+    <section class="contacto" id="contacto" aria-labelledby="contacto-title">
         <div class="container">
-            <h2>Contacto</h2>
-            <p class="section-subtitle">¿Tienes preguntas? Nos encantaría escucharte</p>
+            <div class="section-header fade-in">
+                <span class="section-badge">Escríbenos</span>
+                <h2 id="contacto-title">Contacto</h2>
+                <p class="section-subtitle">¿Tienes preguntas o necesitas agendar una cita? ¡Estamos para ayudarte!</p>
+            </div>
             
             <div class="contacto-content">
-                <div class="contacto-info">
+                <div class="contacto-info fade-in-left">
                     <div class="info-card">
-                        <h3>Teléfono</h3>
-                        <p><a href="tel:+593987654321">+593 98 765 4321</a></p>
+                        <div class="info-icon" aria-hidden="true">📞</div>
+                        <div class="info-details">
+                            <h3>Teléfono</h3>
+                            <p><a href="tel:+593987654321">+593 98 765 4321</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-card highlight">
+                        <div class="info-icon" aria-hidden="true">💬</div>
+                        <div class="info-details">
+                            <h3>WhatsApp</h3>
+                            <p><a href="https://wa.me/593987654321?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20servicios" target="_blank" rel="noopener noreferrer">+593 98 765 4321</a></p>
+                            <span class="info-badge">Respuesta rápida</span>
+                        </div>
                     </div>
 
                     <div class="info-card">
-                        <h3>WhatsApp</h3>
-                        <p><a href="https://wa.me/593987654321" target="_blank">+593 98 765 4321</a></p>
+                        <div class="info-icon" aria-hidden="true">✉️</div>
+                        <div class="info-details">
+                            <h3>Correo Electrónico</h3>
+                            <p><a href="mailto:infoecuadorlatroncal@gmail.com">infoecuadorlatroncal@gmail.com</a></p>
+                        </div>
                     </div>
 
                     <div class="info-card">
-                        <h3>Correo Electrónico</h3>
-                        <p><a href="mailto:info@autoexpresspro.com">info@autoexpresspro.com</a></p>
+                        <div class="info-icon" aria-hidden="true">📍</div>
+                        <div class="info-details">
+                            <h3>Dirección</h3>
+                            <p>Calle Principal 123, La Troncal, Cañar, Ecuador</p>
+                        </div>
                     </div>
 
                     <div class="info-card">
-                        <h3>Dirección</h3>
-                        <p>Calle Principal 123, La Troncal, Ecuador</p>
-                    </div>
-
-                    <div class="info-card">
-                        <h3>Horario</h3>
-                        <p>Lunes - Viernes: 08:00 - 18:00<br>Sábado: 09:00 - 14:00<br>Domingo: Cerrado</p>
+                        <div class="info-icon" aria-hidden="true">🕐</div>
+                        <div class="info-details">
+                            <h3>Horario de Atención</h3>
+                            <p>Lunes - Viernes: 08:00 - 18:00<br>Sábado: 09:00 - 14:00<br>Domingo: Cerrado</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="contacto-form">
-                    <form id="contactForm">
+                <div class="contacto-form fade-in-right">
+                    <div class="form-header">
+                        <h3>Envíanos un mensaje</h3>
+                        <p>Completa el formulario y te responderemos a la brevedad</p>
+                    </div>
+                    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <!-- Web3Forms Access Key - Gratis y sin registro -->
+                        <input type="hidden" name="access_key" value="5be80c99-bc90-4972-837b-6181ddc18527">
+                        <input type="hidden" name="subject" value="Nuevo mensaje desde AUTOEXPRESS PRO">
+                        <input type="hidden" name="from_name" value="AUTOEXPRESS PRO Web">
+                        <input type="hidden" name="redirect" value="https://victor-sdef.github.io/AutoExpres/?enviado=true#contacto">
+                        
                         <div class="form-group">
-                            <label for="nombre">Nombre</label>
-                            <input type="text" id="nombre" name="nombre" required>
+                            <label for="nombre">Nombre completo <span class="required">*</span></label>
+                            <input type="text" id="nombre" name="nombre" placeholder="Ej: Juan Pérez" required autocomplete="name">
                         </div>
 
                         <div class="form-group">
-                            <label for="email">Correo Electrónico</label>
-                            <input type="email" id="email" name="email" required>
+                            <label for="email">Correo Electrónico <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="Ej: correo@ejemplo.com" required autocomplete="email">
                         </div>
 
                         <div class="form-group">
-                            <label for="asunto">Asunto</label>
-                            <input type="text" id="asunto" name="asunto" required>
+                            <label for="telefono">Teléfono (opcional)</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ej: +593 98 765 4321" autocomplete="tel">
                         </div>
 
                         <div class="form-group">
-                            <label for="mensaje">Mensaje</label>
-                            <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+                            <label for="asunto">Asunto <span class="required">*</span></label>
+                            <input type="text" id="asunto" name="asunto" placeholder="Ej: Consulta sobre diagnóstico" required>
                         </div>
 
-                        <button type="submit" class="submit-btn">Enviar Mensaje</button>
+                        <div class="form-group">
+                            <label for="mensaje">Mensaje <span class="required">*</span></label>
+                            <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
+                        </div>
+
+                        <!-- Honeypot anti-spam -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+                        <button type="submit" class="submit-btn" id="submitBtn">
+                            <span class="btn-text">Enviar Mensaje</span>
+                        </button>
                     </form>
+                    
+                    <!-- Mensaje de éxito/error -->
+                    <div class="form-message" id="formMessage" role="alert" aria-live="polite"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer">
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h4>AUTOEXPRESS PRO</h4>
-                    <p>"Servicio inteligente para autos inteligentes"</p>
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo">
+                        <div class="logo-icon" aria-hidden="true">AE</div>
+                        <div>
+                            <h4>AUTOEXPRESS PRO</h4>
+                            <p class="footer-slogan">"Servicio inteligente para autos inteligentes"</p>
+                        </div>
+                    </div>
+                    <p class="footer-description">Somos el taller especializado que La Troncal necesitaba. Tecnología de punta para vehículos modernos.</p>
+                    <div class="footer-social">
+                        <a href="https://wa.me/593987654321" target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp" class="social-link whatsapp">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </a>
+                        <a href="mailto:infoecuadorlatroncal@gmail.com" aria-label="Envíanos un correo electrónico" class="social-link email">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        </a>
+                        <a href="tel:+593987654321" aria-label="Llámanos" class="social-link phone">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                        </a>
+                    </div>
                 </div>
 
                 <div class="footer-section">
                     <h4>Enlaces Rápidos</h4>
+                    <nav aria-label="Enlaces del footer">
+                        <ul>
+                            <li><a href="#home">Inicio</a></li>
+                            <li><a href="#nosotros">Nosotros</a></li>
+                            <li><a href="#servicios">Servicios</a></li>
+                            <li><a href="#beneficios">Beneficios</a></li>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Servicios</h4>
                     <ul>
-                        <li><a href="#home">Inicio</a></li>
-                        <li><a href="#nosotros">Nosotros</a></li>
-                        <li><a href="#servicios">Servicios</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#servicios">Diagnóstico Computarizado</a></li>
+                        <li><a href="#servicios">Mantenimiento Preventivo</a></li>
+                        <li><a href="#servicios">Reparaciones Electrónicas</a></li>
+                        <li><a href="#servicios">Escaneo Automotriz</a></li>
+                        <li><a href="#servicios">Actualización de Software</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p>Teléfono: <a href="tel:+593987654321">+593 98 765 4321</a></p>
-                    <p>Email: <a href="mailto:info@autoexpresspro.com">info@autoexpresspro.com</a></p>
+                    <address>
+                        <p><strong>📍</strong> Calle Principal 123, La Troncal</p>
+                        <p><strong>📞</strong> <a href="tel:+593987654321">+593 98 765 4321</a></p>
+                        <p><strong>✉️</strong> <a href="mailto:infoecuadorlatroncal@gmail.com">infoecuadorlatroncal@gmail.com</a></p>
+                    </address>
                 </div>
             </div>
 
             <div class="footer-bottom">
                 <p>&copy; 2025 AUTOEXPRESS PRO. Todos los derechos reservados.</p>
+                <p class="footer-credits">Desarrollado con 💙 en La Troncal, Ecuador</p>
             </div>
         </div>
     </footer>
+
+    <!-- Botón flotante de WhatsApp -->
+    <a href="https://wa.me/593987654321?text=Hola,%20me%20interesa%20obtener%20información%20sobre%20sus%20servicios" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Chatea con nosotros por WhatsApp">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="32" height="32" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span class="whatsapp-tooltip">¿Necesitas ayuda?</span>
+    </a>
+
+    <!-- Botón volver arriba -->
+    <button class="scroll-top" id="scrollTop" aria-label="Volver al inicio de la página" style="display: none;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" aria-hidden="true"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
 
     <script src="script.js"></script>
 </body>
